@@ -13,6 +13,7 @@ Many people’s version-control method of choice is to copy files into another d
 To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control.
 
 ![](images/local-vcs.png)
+
 **Figure-2.1** local version control system
 
 One of the most popular VCS tools was a system called RCS, which is still distributed with many computers today. RCS works by keeping patch sets (that is, the differences between files) in a special format on disk; it can then re-create what any file looked like at any point in time by adding up all the patches.
@@ -22,6 +23,7 @@ One of the most popular VCS tools was a system called RCS, which is still distri
 Centralized Version Control Systems (such as CVS, Subversion, and Perforce) have a single server that contains all the versioned files, and a number of clients that check out files from the central place. For many years, this has been the standard for version control.
 
 ![](images/centralized-vcs.png)
+
 **Figure-2.2** centralized verion control systems
 
 This setup offers many advantages, especially over local VCSs. For example, everyone knows to a certain degree what everyone else on the project is doing. Administrators have fine-grained control over who can do what, and it’s far easier to administer a CVCS than it is to deal with local databases on every client.
@@ -33,6 +35,7 @@ However, this setup also has some serious downsides. The most obvious is the sin
 In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via that server, any of the client repositories can be copied back up to the server to restore it. Every clone is really a full backup of all the data.
 
 ![](images/distributed-vcs.png)
+
 **Figure-2.3** distributed version control system
 
 Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project. This allows you to set up several types of workflows that aren’t possible in centralized systems, such as hierarchical models.
