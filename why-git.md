@@ -18,4 +18,4 @@ Answering to the quetion **why is Git?**. Because of the following features
 
 Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development 
 
-These are resons, makes *Git* more popular in the recent modern agile era.
+These are reasons, makes *Git* more popular in the recent modern agile era.
