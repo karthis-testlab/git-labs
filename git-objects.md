@@ -44,6 +44,47 @@ Trees are identified by their SHA-1 hash, as well referring to these objects, ei
 
 Git uses the tree to identify which tracked files correspond to the content stored in their bolbs. Blob is purely a file's binary content and it doesn't contain the information about file path and name of the filesystem. These informations are maintained by the Git tree. 
 
-### Where are Git Tree stored?
+### Where are Git Tree object stored?
 
 Tree is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+
+## Commit
+
+In Git, **a snapshot of the working tree is a commit**. This means, storing all the files that existed at that time along with their contents. It also contains meta-data such as the information about the commiter, commit message, commit time and also having one (or) more parent commits of the previous snapshot, if any.
+
+A commit object is created when we run ``` git commit ``` command.
+
+### Where are Git Commit object stored?
+
+Tree is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+
+For example, we can use the ``` git cat-file -p <object-hash> ``` command to provides the content of an object in a repoistory.
+
+```
+$ git cat-file -p b2f68f2cd4f275ae5d66352e8ee517676afa4b26
+```
+This would result in an output like the following:
+
+```
+tree 6634ea0aa87add3ab37e985d9d6454b6b04b85ea
+parent 44ae4cea64fade91347a6779f2d50efe37bd2fd2
+author Karthikeyan Rajendran <karthis.testlab@gmail.com> 1674111158 +0530
+committer Karthikeyan Rajendran <karthis.testlab@gmail.com> 1674111158 +0530
+
+Add tree object in the git-object.md file
+```
+As you can see, it contains the following information related to a commit:
+
+1. Reference to the tree object;
+2. Commit hash of parent(s);
+3. Commit author;
+4. Committer;
+5. Commit message.
+
+The command to provides the type of an object in a repoistory.
+
+```
+$ git cat-file -t b2f68f2cd4f275ae5d66352e8ee517676afa4b26
+
+commit
+```
