@@ -15,6 +15,7 @@ Git uses **object chaining** to link together various objects. They're;
 1. Binary Long Object (Blob)
 2. Tree
 3. Commit
+4. Annotated Tag
 
 ## Blob (Binary Long Object)
 
@@ -22,7 +23,7 @@ A Git blob is the object type used to store the contents of each file in a repos
 
 ### Where are Git Blobs stored?
 
-Blob is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+Blob object is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
 
 Every blob in the git is identified by the SHA-1 hash. The SHA-1 hash consists of 20 bytes and is usually represented by 40 characters in the hexadecimal format.
 
@@ -46,7 +47,7 @@ Git uses the tree to identify which tracked files correspond to the content stor
 
 ### Where are Git Tree object stored?
 
-Tree is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+Tree object is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
 
 ## Commit
 
@@ -56,7 +57,7 @@ A commit object is created when we run ``` git commit ``` command.
 
 ### Where are Git Commit object stored?
 
-Tree is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+Commit object is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
 
 For example, we can use the ``` git cat-file -p <object-hash> ``` command to provides the content of an object in a repoistory.
 
@@ -87,4 +88,54 @@ The command to provides the type of an object in a repoistory.
 $ git cat-file -t b2f68f2cd4f275ae5d66352e8ee517676afa4b26
 
 commit
+```
+
+## Annotated Tag
+
+The annotated tag is a git object, which was stored in the git database. They're checksummed; contain the tagger name, email and date; have a tagging message; commit id and can be signed and verified with GNU Privacy Guard (GPG).
+
+### Where are Git Annotated Tag object stored?
+
+Annotated Tag object is stored in Git's object database, which is located in the ``` .git/objects/ ``` in the root directory of the project repository.
+
+If we want create annotated tag, use ``` git tag ``` command along with the **-a** option. This will create a Git object.
+
+```
+git tag -a [-m <msg> | -F <file>] [tagname] [<commit_id>]
+```
+-m -> option used to specify the tag message
+-F -> option used to the specifying a file with contains the tag message
+
+if we to specify both -m (or) -F flag (options), in this case a editor will be opened. So, that we can type the tag message.
+
+For Example;
+
+```
+git tag -a -m "MVP1.0 Release" v1.0
+```
+
+After executing the git tag command. If we want to see the tag detials such as the tagger name, date, tag message and commit detials we can use git show command for that.
+
+```
+git show [tagname]
+```
+
+To push the tag into the remote repository we can use the ``` git push ``` command.
+
+**To transfer a single tag**, use the git push command and specify the remote name, such as origin, as well as the tag name.
+
+```
+git push [remote_name] [tagname]
+
+For example,
+git push origin v1.0
+```
+
+**To transfer all of tags**, use git push remote, followed by the tags option
+
+```
+git push [remote_name] [--tags]
+
+For example,
+git push origin --tags
 ```
