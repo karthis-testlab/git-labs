@@ -7,3 +7,4 @@ Please follow the below agenda to make you from the basic to the pro level in gi
 3. [What is Git?](what-is-git.md)
 4. [Version Control Type](version-control-type.md)
 5. [Why Git?](why-git.md)
+6. [Git Objects](git-objects.md)

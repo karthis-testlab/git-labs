@@ -12,7 +12,7 @@ Many people’s version-control method of choice is to copy files into another d
 
 To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control.
 
-![](images/local-vcs.png)
+<img src="images/local-vcs.png" title="Local VCS" alt="Local VCS" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-2.1** local version control system
 
@@ -22,7 +22,7 @@ One of the most popular VCS tools was a system called RCS, which is still distri
 
 Centralized Version Control Systems (such as CVS, Subversion, and Perforce) have a single server that contains all the versioned files, and a number of clients that check out files from the central place. For many years, this has been the standard for version control.
 
-![](images/centralized-vcs.png)
+<img src="images/centralized-vcs.png" title="Centralized VCS" alt="Centralized VCS" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-2.2** centralized verion control systems
 
@@ -34,7 +34,7 @@ However, this setup also has some serious downsides. The most obvious is the sin
 
 In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its full history. Thus, if any server dies, and these systems were collaborating via that server, any of the client repositories can be copied back up to the server to restore it. Every clone is really a full backup of all the data.
 
-![](images/distributed-vcs.png)
+<img src="images/distributed-vcs.png" title="Distributed VCS" alt="Distribute VCS" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-2.3** distributed version control system
 

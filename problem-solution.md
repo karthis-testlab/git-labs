@@ -11,7 +11,7 @@ A *lock-modify-unlock model* to address the problem of many authors clobbering e
 
 Here is an example, if Harry wants to do some changes in the common file. Then he must “lock” a file before he can begin making changes to it. If Harry has locked a file, then Sally cannot also lock it, and therefore cannot make any changes to that file. All she can do is read the file, and wait for Harry to finish his changes and release his lock. After Harry unlocks the file, Sally can take her turn by locking and editing the file.
 
-![](images/lock-modify-unlock.png)
+<img src="images/lock-modify-unlock.png" title="lock-modified-unlock" alt="lock-modified-unlock" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-1** lock-modify-unlock strategy
 
@@ -29,11 +29,11 @@ A *copy-modify-merge* model as an alternative to locking. In this model, each us
 
 Here's an example. Say that Harry and Sally each create working copies of the same project, copied from the repository. They work concurrently and make changes to the same file A within their copies. Sally saves her changes to the repository first. When Harry attempts to save his changes later, the repository informs him that his file A is out-of-date. In other words, file A in the repository has somehow changed since he last copied it. So Harry asks his client to merge any new changes from the repository into his working copy of file A. Chances are that Sally's changes don't overlap with his own; so once he has both sets of changes integrated, he saves his working copy back to the repository.
 
-![](images/copy-modify-merge.png)
+<img src="images/copy-modify-merge.png" title="copyt-modify-merge" alt="copyt-modify-merge" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-1.1** copyt-modify-merge strategy
 
-![](images/copy-modify-merge-1.png)
+<img src="images/copy-modify-merge-1.png" title="copyt-modify-merge-contd" alt="copyt-modify-merge-contd" width="350" height="250" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
 
 **Figure-1.2** copyt-modify-merge strategy (continued)
 
